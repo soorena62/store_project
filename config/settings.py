@@ -11,6 +11,12 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+from environs import Env
+import os
+
+
+env = Env()
+env.read_env()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,12 +26,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o+=w=5zz-^z5wmcx$&462_*4o*y^^rb&k)$uxn-xf5l#5+0dsc'
+SECRET_KEY = env("DJANGO_SECRET_KEY")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = env.bool("DJANGO_DEBUG")
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', ".herokuapp.com"]
 
 
 # Application definition
@@ -38,11 +44,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    # Third Apps:
+    # Depends Apps:
     'allauth',
     'allauth.account',
     'crispy_forms',
-    "crispy_bootstrap5",
+    'ckeditor',
     
     # My Apps:
     'accounts',
@@ -72,7 +78,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [str(BASE_DIR.joinpath('templates'))],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -169,5 +175,5 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 # crispy forms:
-CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
-CRISPY_TEMPLATE_PACK = 'bootstrap5'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
