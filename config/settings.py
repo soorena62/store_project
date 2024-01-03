@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-o+=w=5zz-^z5wmcx$&462_*4o*y^^rb&k)$uxn-xf5l#5+0dsc
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     # Third Apps:
     'allauth',
     'allauth.account',
+    'crispy_forms',
+    "crispy_bootstrap5",
     
     # My Apps:
     'accounts',
@@ -50,6 +52,8 @@ INSTALLED_APPS = [
     'pages',
     'cart',
 ]
+
+SITE_ID = 1
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -165,4 +169,5 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 # crispy forms:
-# CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap5"
+CRISPY_TEMPLATE_PACK = 'bootstrap5'
