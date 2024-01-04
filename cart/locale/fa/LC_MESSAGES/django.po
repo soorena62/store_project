@@ -1,0 +1,66 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-01-04 23:57+0330\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: .\cart.py:37
+msgid "Product successfully added to cart"
+msgstr "محصول با موفقیت به سبد خرید اضافه شد."
+
+#: .\cart.py:49
+msgid "Product successfully removed from cart"
+msgstr "محصول با موفقیت از سبد خرید حذف شد."
+
+#: .\templates\cart\cart_detail.html:12 .\templates\cart\cart_sidebar.html:8
+msgid "Cart"
+msgstr "سبد خرید"
+
+#: .\templates\cart\cart_detail.html:56 .\templates\cart\cart_detail.html:78
+#: .\templates\cart\cart_detail.html:124 .\templates\cart\cart_sidebar.html:34
+msgid "$"
+msgstr "تومان"
+
+#: .\templates\cart\cart_detail.html:87
+msgid "Cart is Empty! Please add some products to the cart"
+msgstr "سبد خرید شما خالی است! لطفا چند محصول به سبد خود اضافه کنید. "
+
+#: .\templates\cart\cart_detail.html:88
+msgid "Go shopping"
+msgstr "رفتن به فروشگاه"
+
+#: .\templates\cart\cart_detail.html:98
+msgid "Empty Cart"
+msgstr "خالی کردن سبد خرید"
+
+#: .\templates\cart\cart_detail.html:131 .\templates\cart\cart_sidebar.html:39
+msgid "Checkout"
+msgstr "پرداخت"
+
+#: .\templates\cart\cart_sidebar.html:33
+msgid "Total"
+msgstr "جمع کل"
+
+#: .\templates\cart\cart_sidebar.html:37
+msgid "Go to cart"
+msgstr "رفتن به سبد خرید"
+
+#: .\views.py:57
+msgid "All products successfully removed from your cart"
+msgstr "همه محصولات با موفقیت از سبد خرید شما حذف شدند."
+
+#: .\views.py:59
+msgid "Your cart is already empty"
+msgstr "سبد خرید شما از قبل خالی است."
