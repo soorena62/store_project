@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+from django.contrib import staticfiles
 from django.contrib.messages import constants as messages
 from pathlib import Path
 from environs import Env
@@ -43,8 +44,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'jalali_date',
+    'django.contrib.humanize',
     # Depends Apps:
+    'jalali_date',
     'allauth',
     'allauth.account',
     'crispy_forms',
@@ -52,6 +54,7 @@ INSTALLED_APPS = [
     'rosetta',
     
     # My Apps:
+    'persian_translate',
     'accounts',
     'products',
     'payment',
@@ -161,11 +164,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media
 MEDIA_URL = '/media/'
-# MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field

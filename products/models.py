@@ -1,8 +1,9 @@
 from django.contrib.auth import get_user_model
+from django.utils import timezone
 from django.utils.translation import gettext_lazy as _
 from django.db import models
 from django.shortcuts import reverse
-# from ckeditor.fields import RichTextField
+from ckeditor.fields import RichTextField
 # Create your models here:
 
 
@@ -10,10 +11,10 @@ class Product(models.Model):
     name = models.CharField(max_length=100)
     price = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
-    description = models.TextField()
-    cover = models.ImageField()
+    description = RichTextField()
+    image = models.ImageField(verbose_name=_('Product Image'), upload_to='product/product_cover/', blank=True)
 
-    create_date = models.DateTimeField(auto_now_add=True)
+    create_date = models.DateTimeField(_('Date Time of Creation'), default=timezone.now)
     update_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):

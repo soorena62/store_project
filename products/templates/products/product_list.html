@@ -31,7 +31,7 @@
                                 <div class="row xxl-block-grid-6 grid-space-20">
                                     {% for product in products %}
                                         <div class="col-xl-3 col-md-4 col-sm-6 mb--50">
-                                        <div class="StarMarket-product">
+                                        <div class="ShoppingYar-product">
                                             <div class="product-inner">
                                                 <figure class="product-image">
                                                     <a href="{{ product.get_absolute_url }}">
@@ -39,7 +39,7 @@
                                                             <img src="{{ product.image.url }}" alt="Products">
                                                         {% endif %}
                                                     </a>
-                                                    <div class="StarMarket-product-action">
+                                                    <div class="ShoppingYar-product-action">
                                                         <div class="product-action d-flex">
                                                             <a href="wishlist.html" class="action-btn">
                                                                 <i class="flaticon flaticon-like"></i>
@@ -106,7 +106,7 @@
     {% include 'cart/cart_sidebar.html' %}
 
     <!-- Global Overlay Start -->
-    <div class="StarMarket-global-overlay"></div>
+    <div class="ShoppingYar-global-overlay"></div>
     <!-- Global Overlay End -->
 
 </div>

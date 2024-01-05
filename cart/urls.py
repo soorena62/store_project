@@ -1,3 +1,5 @@
+from django.conf.urls.static import static
+from django.conf import settings
 from django.urls import path
 
 from .views import cart_detail_view, add_to_cart_view, remove_from_cart, clear_cart
@@ -9,4 +11,4 @@ urlpatterns = [
     path('add/<int:product_id>/', add_to_cart_view, name='cart_add'),
     path('remove/<int:product_id>/', remove_from_cart, name='cart_remove'),
     path('clear/', clear_cart, name='cart_clear'),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
