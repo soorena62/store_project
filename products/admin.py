@@ -7,7 +7,7 @@ from .models import Product, Comment
 
 class CommentsInline(admin.TabularInline):
     model = Comment
-    fields = ['author', 'body', 'stars', 'is_active', ]
+    fields = ['author', 'body', 'stars', 'active', ]
     extra = 1
 
 
@@ -22,4 +22,4 @@ class ProductAdmin(ModelAdminJalaliMixin, admin.ModelAdmin):
 
 @admin.register(Comment)
 class CommentAdmin(admin.ModelAdmin):
-    list_display = ['product', 'author', 'body', 'stars', 'is_active', ]
+    list_display = ['product', 'author', 'body', 'stars', 'active', ]

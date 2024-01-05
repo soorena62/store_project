@@ -51,7 +51,7 @@ class Comment(models.Model):
     create_date = models.DateTimeField(auto_now_add=True)
     update_date = models.DateTimeField(auto_now=True)
 
-    is_active = models.BooleanField(default=True)
+    active = models.BooleanField(default=True)
 
     # Manager
     objects = models.Manager()
