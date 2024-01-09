@@ -21,7 +21,7 @@
                     <div class="row no-gutters mb--80">
                         <div class="col-12 col-sm-4 product-main-image d-flex align-content-center">
                             {% if product.image %}
-                                <img class="m-auto" style="max-height: 400px;" src="{{ product.image.url }}" alt="">
+                                <img class="m-auto" style="max-height: 1000px;" src="{{ product.image.url }}" alt="Products">
                             {% endif %}
                         </div>
                         <div class="col-12 col-sm-8 product-main-details mt-md--50">
@@ -31,7 +31,7 @@
                                     {{ product.short_description|truncatechars:300 }}
                                 </p>
                                 <div class="my-5 py-5 product-price-wrapper mb--25">
-                                    <span class="money text-success">{{ product.price|intcomma:False|translate_number }} {% trans '$' %}</span>
+                                    <span class="money text-success">{{ product.price|intcomma:True|translate_number }} {% translate '$' %}</span>
                                     <span class="price-separator">-</span>
                                     <span class="money old-price text-danger">۲۱۰,۰۰۰ تومان</span>
                                 </div>
@@ -47,14 +47,7 @@
                                             </button>
                                         </div>
                                     </form>
-{#                                    <div class="quantity-wrapper d-flex justify-content-start">#}
-{#                                        <div class="quantity">#}
-{#                                            <input type="number" class="quantity-input" name="qty" id="qty" value="1" min="1">#}
-{#                                        </div>#}
-{#                                    </div>#}
-{#                                    <button type="button" class="btn btn-small btn-bg-red btn-color-white btn-hover-2" onclick="window.location.href='cart.html'">#}
-{#                                        {% trans 'Add to Cart' %}#}
-{#                                    </button>#}
+
                                 </div>
                                 <div class="product-footer-meta mt-5 pt-5">
                                     <p><span class="m-0">{% trans 'Categories' %}:</span>
@@ -124,7 +117,7 @@
                                                                     <img src="{% static 'img/others/comment-1.jpg' %}" alt="Review Avatar" class="review__avatar p-3">
                                                                     <div>
                                                                         <div class="review__meta" dir="ltr">
-                                                                            <span class="review__published-date">{{ comment.datetime_created|to_jalali:'%Y %B %d'|translate_number }}</span>
+                                                                            <span class="review__published-date">{{ comment.create_date|to_jalali:'%Y %B %d'|translate_number }}</span>
                                                                             <span class="review__dash">-</span>
                                                                             <strong class="review__author px-4">{{ comment.author.username }}</strong>
                                                                         </div>

@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-from django.contrib import staticfiles
+# from django.contrib import staticfiles
 from django.contrib.messages import constants as messages
 from pathlib import Path
 from environs import Env
@@ -48,8 +48,9 @@ INSTALLED_APPS = [
     # Depends Apps:
     'jalali_date',
     'allauth',
-    'allauth.account',
+    "crispy_bootstrap4",
     'crispy_forms',
+    'allauth.account',
     'ckeditor',
     'rosetta',
     
@@ -163,7 +164,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 STATIC_URL = 'static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'), ]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static/'),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Media
@@ -189,5 +190,4 @@ ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_UNIQUE_EMAIL = True
 
 # crispy forms:
-# CRISPY_ALLOWED_TEMPLATE_PACKS = "bootstrap4"
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
