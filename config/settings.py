@@ -191,3 +191,6 @@ ACCOUNT_UNIQUE_EMAIL = True
 
 # crispy forms:
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
+
+# Zarinpal:
+# ZARINPAL_MERCHANT_ID = env('ZARINPAL_MERCHANT_ID')
